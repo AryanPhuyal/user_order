@@ -2,6 +2,14 @@ const router = require("express").Router();
 const Order = require("../model/order");
 const user = require("../model/user");
 const User = require("../model/user");
+const userController = require("../controller/userController");
+
+router.post("/login", userController.login);
+
+router.get("/forgot-password", async (req, res) => {});
+router.post("/signup", userController.signup);
+
+router.patch("/disable-user", async (req, res) => {});
 
 router.get("/set-user", async (req, res) => {
   const user = await User.insertMany([
